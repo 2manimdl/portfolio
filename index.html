@@ -7,30 +7,27 @@
     <title>Farrel Vittorio Kuki — Portfolio</title>
     <meta name="description"
         content="Portfolio Farrel Vittorio Kuki — Software Engineering Student & Junior Web Developer.">
-
-    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet">
-
-    <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- Animated Grid Background -->
     <div id="grid-bg" aria-hidden="true"></div>
 
-    <!-- ═══ NAVBAR ═══ -->
+    <!-- NAVBAR -->
     <nav id="navbar">
         <div class="logo">FVK.</div>
         <ul class="nav-links" id="nav-links">
             <li><a href="#home" class="nav-item">Home</a></li>
             <li><a href="#about" class="nav-item">About</a></li>
             <li><a href="#skills" class="nav-item">Skills</a></li>
-            <li><a href="#projects" class="nav-item">Projects</a></li>
             <li><a href="#journey" class="nav-item">Journey</a></li>
+            <li><a href="#projects" class="nav-item">Projects</a></li>
+            <li><a href="#courses" class="nav-item">Courses</a></li>
+            <li><a href="#products" class="nav-item">Products</a></li>
         </ul>
         <div class="menu-toggle" id="mobile-menu">
             <span></span>
@@ -39,100 +36,90 @@
         </div>
     </nav>
 
-    <!-- ═══ HERO SECTION ═══ -->
+    <!-- HERO -->
     <section id="home" class="hero">
         <div class="hero-text">
             <p class="role">Software Engineering Student | Junior Web Developer</p>
             <h1>FARREL<br>VITTORIO<br>KUKI</h1>
-            <p class="desc">Halo, saya Farrel. Seorang siswa Rekayasa Perangkat Lunak yang fokus pada pengembangan
-                solusi digital yang efisien dan fungsional. Saya percaya bahwa kode yang baik adalah kode yang bersih,
-                terstruktur, dan mudah dipelihara.</p>
+            <p class="desc">Halo, kenalin saya Farrel. Saya adalah siswa Rekayasa Perangkat Lunak yang suka banget bikin website fungsional dan punya tampilan menarik. Buat saya, ngoding itu bukan cuma ngetik, tapi juga soal bikin karya yang rapi dan gampang dipahami.</p>
             <a href="#projects" class="btn">Lihat Hasil Ngoding</a>
         </div>
         <div class="hero-photo-wrapper gs-reveal">
             <div class="hero-photo">
-                <img src="assets/foto-farrel.jpeg" alt="Farrel Vittorio Kuki">
+                <img src="assets/foto-farrel.jpeg" alt="Farrel Vittorio Kuki"
+                    onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:4rem\'>👤</span>'">
             </div>
         </div>
     </section>
 
-    <!-- ═══ ABOUT SECTION ═══ -->
+    <!-- ABOUT -->
     <section id="about">
         <h2 class="gs-reveal">About Me</h2>
         <div class="about-content">
             <div class="gs-reveal">
-                <p>Ketertarikan saya pada dunia programming dimulai dari rasa ingin tahu tentang cara kerja sistem di
-                    balik layar. Saat ini, saya aktif mendalami ekosistem React JS untuk membangun website yang menarik
-                    secara tampilan dan optimal secara performa.</p>
+                <p>Semuanya berawal dari rasa penasaran tentang gimana cara website bekerja di balik layar. Sekarang, saya lagi fokus ngulik ekosistem React JS dan Next.js buat bikin website yang gak cuma asik dilihat, tapi juga cepat dan responsif.</p>
             </div>
         </div>
     </section>
 
-    <!-- ═══ SKILLS SECTION ═══ -->
+    <!-- SKILLS -->
     <section id="skills">
         <h2 class="gs-reveal">My Skills</h2>
 
-        <!-- Languages -->
         <div class="skills-category">
             <h3 class="gs-reveal">Languages</h3>
             <div class="skills-grid">
                 <div class="skill-card gs-reveal">
-                    <img src="assets/html.png" alt="HTML5">
+                    <img src="assets/html.png" alt="HTML5" onerror="this.style.display='none'">
                     <span>HTML5</span>
                 </div>
                 <div class="skill-card gs-reveal">
-                    <img src="assets/css.png" alt="CSS3">
+                    <img src="assets/css.png" alt="CSS3" onerror="this.style.display='none'">
                     <span>CSS3</span>
                 </div>
                 <div class="skill-card gs-reveal">
-                    <img src="assets/js.png" alt="JavaScript">
+                    <img src="assets/js.png" alt="JavaScript" onerror="this.style.display='none'">
                     <span>JavaScript</span>
                 </div>
                 <div class="skill-card gs-reveal">
-                    <img src="assets/php.png" alt="PHP">
+                    <img src="assets/php.png" alt="PHP" onerror="this.style.display='none'">
                     <span>PHP</span>
                 </div>
             </div>
         </div>
 
-        <!-- Tools & Frameworks -->
         <div class="skills-category">
             <h3 class="gs-reveal">Tools & Frameworks</h3>
             <div class="skills-grid">
                 <div class="skill-card gs-reveal">
-                    <img src="assets/react.png" alt="React">
+                    <img src="assets/react.png" alt="React" onerror="this.style.display='none'">
                     <span>React</span>
                 </div>
                 <div class="skill-card gs-reveal">
-                    <img src="assets/laravel.png" alt="Laravel">
+                    <img src="assets/nextjs.png" alt="Next.js" onerror="this.style.display='none'">
+                    <span>Next.js</span>
+                </div>
+                <div class="skill-card gs-reveal">
+                    <img src="assets/laravel.png" alt="Laravel" onerror="this.style.display='none'">
                     <span>Laravel</span>
                 </div>
                 <div class="skill-card gs-reveal">
-                    <img src="assets/mysql.png" alt="MySQL">
+                    <img src="assets/mysql.png" alt="MySQL" onerror="this.style.display='none'">
                     <span>MySQL</span>
                 </div>
                 <div class="skill-card gs-reveal">
-                    <img src="assets/vscode.png" alt="VS Code">
+                    <img src="assets/vscode.png" alt="VS Code" onerror="this.style.display='none'">
                     <span>VS Code</span>
+                </div>
+                <div class="skill-card gs-reveal">
+                    <svg viewBox="0 0 24 24" width="44" height="44" fill="currentColor"><path d="M12 2L24 22H0Z"/></svg>
+                    <span>Vercel</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ═══ PROJECTS SECTION ═══ -->
-    <section id="projects">
-        <h2 class="gs-reveal">Projects</h2>
-        <div class="projects-showcase gs-reveal">
-            <p>Semua project saya tersedia di GitHub mulai dari eksperimen kecil hingga aplikasi fullstack. Silakan
-                kunjungi untuk melihat bagaimana saya menulis kode dan apa yang sedang saya kerjakan.</p>
-            <a href="https://github.com/2manimdl" class="github-cta" target="_blank" rel="noopener noreferrer">
-                <img src="assets/github.png" alt="GitHub">
-                View My GitHub
-            </a>
-        </div>
-    </section>
-
-    <!-- ═══ JOURNEY SECTION ═══ -->
+    <!-- JOURNEY -->
     <section id="journey">
         <h2 class="gs-reveal">Learning Journey</h2>
         <div class="journey-list">
@@ -151,29 +138,210 @@
         </div>
     </section>
 
-    <!-- ═══ FOOTER / CONTACT ═══ -->
+    <!-- PROJECTS -->
+    <section id="projects">
+        <h2 class="gs-reveal">Projects</h2>
+        <p class="section-sub gs-reveal">Beberapa karya terbaru, dari eksperimen kecil sampai aplikasi fullstack yang beneran hidup di internet.</p>
+
+        <div class="projects-grid">
+            <div class="project-card gs-reveal featured">
+                <div class="project-preview">
+                    <img src="assets/project1.png" alt="Preview Project Terbaru" class="project-thumb"
+                        onerror="this.style.display='none'; this.parentElement.style.background='#e8e8e8'">
+                    <div class="project-overlay">
+                        <a href="https://yourwebsite.com" target="_blank" rel="noopener noreferrer" class="preview-btn">Buka Website →</a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="project-tag">Terbaru</span>
+                    <h3>AI Post Generator</h3>
+                    <p>DPF Creator Pro adalah aplikasi web berbasis AI yang dirancang untuk membantu pembuatan konten media sosial Djalaludin Pane Foundation, khususnya konten Instagram. Aplikasi ini membantu menghasilkan judul, subtitle, caption, hashtag, prompt gambar, visual latar, serta poster siap ekspor dalam satu dashboard interaktif.</p>
+                    <div class="project-stack">
+                        <span>Next JS</span><span>Tailwind</span><span>Rest API</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card gs-reveal placeholder-card">
+                <div class="project-preview placeholder-preview">
+                    <span class="placeholder-icon">⌛</span>
+                    <p>Coming Soon</p>
+                </div>
+                <div class="project-info">
+                    <span class="project-tag muted">Segera</span>
+                    <h3>Project Berikutnya</h3>
+                    <p>Masih dalam pengerjaan. Stay tuned!</p>
+                </div>
+            </div>
+
+            <div class="project-card gs-reveal placeholder-card">
+                <div class="project-preview placeholder-preview">
+                    <span class="placeholder-icon">⌛</span>
+                    <p>Coming Soon</p>
+                </div>
+                <div class="project-info">
+                    <span class="project-tag muted">Segera</span>
+                    <h3>Project Berikutnya</h3>
+                    <p>Masih dalam pengerjaan. Stay tuned!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="projects-footer gs-reveal">
+            <a href="projects.html" class="btn-outline">Lihat Semua Project →</a>
+            <a href="https://github.com/2manimdl" target="_blank" rel="noopener noreferrer" class="github-cta">
+                <img src="assets/github.png" alt="GitHub" onerror="this.style.display='none'">
+                View My GitHub
+            </a>
+        </div>
+    </section>
+
+    <!-- COURSES -->
+    <section id="courses">
+        <h2 class="gs-reveal">Courses & Training</h2>
+        <p class="section-sub gs-reveal">Belajar bareng, tumbuh bareng. Ikuti program yang saya rekomendasikan dan buktikan sendiri hasilnya.</p>
+
+        <div class="courses-grid">
+            <div class="course-card gs-reveal">
+                <div class="course-banner">
+                    <img src="assets/webinar.png" alt="Webinar AI Gemini"
+                        onerror="this.style.display='none'; this.parentElement.style.background='#f0f0f0'">
+                </div>
+                <div class="course-body">
+                    <div class="course-header">
+                        <span class="course-badge free">GRATIS</span>
+                        <span class="course-type">Webinar Online</span>
+                    </div>
+                    <h3>Webinar AI Gemini</h3>
+                    <p>Belajar memanfaatkan Gemini AI secara praktis dan langsung bisa dipakai, rutin setiap Jumat, bisa join dari mana aja.</p>
+                    <ul class="course-details">
+                        <li>📅 Setiap Jumat</li>
+                        <li>🕑 Jam 14.00 – 15.00 WIB</li>
+                        <li>💻 Online via Zoom / Meet</li>
+                        <li>💸 100% Gratis</li>
+                    </ul>
+                    <a href="course-webinar.html" class="course-btn">Detail Program →</a>
+                </div>
+            </div>
+
+            <div class="course-card gs-reveal">
+                <div class="course-banner">
+                    <img src="assets/bootcamp.jpeg" alt="Bootcamp Bina AI"
+                        onerror="this.style.display='none'; this.parentElement.style.background='#f0f0f0'">
+                </div>
+                <div class="course-body">
+                    <div class="course-header">
+                        <span class="course-badge paid">BERBAYAR</span>
+                        <span class="course-type">Bootcamp Intensif</span>
+                    </div>
+                    <h3>Bootcamp Bina AI</h3>
+                    <p>Program bootcamp intensif untuk belajar AI dari nol sampai bisa. Dengan berwakaf, ilmu yang kamu dapat, kamu juga ikut menyebarkannya.</p>
+                    <ul class="course-details">
+                        <li>📅 Mulai 16 Mei 2025</li>
+                        <li>⏱ Intensif & Terbimbing</li>
+                        <li>🎓 Sertifikat Kelulusan</li>
+                        <li>💰 Lihat harga di WA</li>
+                    </ul>
+                    <a href="course-bootcamp.html" class="course-btn">Detail Program →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="products">
+        <h2 class="gs-reveal">Digital Arsenal</h2>
+        <p class="section-sub gs-reveal">Bukan sekadar produk, ini senjata digital yang saya racik sendiri buat kamu yang mau bergerak lebih cepat di era AI.</p>
+
+        <div class="products-grid">
+            <div class="product-card gs-reveal">
+                <div class="product-banner">
+                    <img src="assets/prompt.png" alt="Website Builder Prompt Kit"
+                        onerror="this.style.display='none'; this.parentElement.style.background='#f0f0f0'">
+                </div>
+                <div class="product-body">
+                    <span class="product-type">Prompt Pack</span>
+                    <h3>Website Builder Prompt Kit</h3>
+                    <p>Kumpulan prompt AI yang bukan template kosong, tapi instruksi matang yang bisa langsung kamu paste ke Gemini dan keluar jadi website siap pakai.</p>
+                    <div class="product-tags">
+                        <span>Gemini Ready</span>
+                        <span>10+ Kategori</span>
+                        <span>Siap Pakai</span>
+                    </div>
+                    <a href="product-prompt.html" class="product-btn">Lihat Detail →</a>
+                </div>
+            </div>
+
+            <div class="product-card gs-reveal">
+                <div class="product-banner">
+                    <img src="assets/canva.png" alt="Edu Pack: Bahan Ajar Anak"
+                        onerror="this.style.display='none'; this.parentElement.style.background='#f0f0f0'">
+                </div>
+                <div class="product-body">
+                    <span class="product-type">Canva Template Pack</span>
+                    <h3>Edu Pack: Bahan Ajar Anak</h3>
+                    <p>Pack template Canva khusus untuk bahan ajar anak-anak yang penuh warna, menarik, dan langsung bisa diedit. Cocok buat guru, orangtua homeschooling, atau siapa pun.</p>
+                    <div class="product-tags">
+                        <span>Canva Editable</span>
+                        <span>Full Color</span>
+                        <span>Anak-Friendly</span>
+                    </div>
+                    <a href="product-canva.html" class="product-btn">Lihat Detail →</a>
+                </div>
+            </div>
+
+            <div class="product-card gs-reveal">
+                <div class="product-banner">
+                    <img src="assets/umkm.png" alt="Paket Hadir Digital UMKM"
+                        onerror="this.style.display='none'; this.parentElement.style.background='#f0f0f0'">
+                </div>
+                <div class="product-body">
+                    <span class="product-type">Jasa Digital</span>
+                    <h3>Paket Hadir Digital UMKM</h3>
+                    <p>Satu paket, bisnis kamu langsung eksis di dunia digital. Dari landing page, QRIS, Google Maps, sampai Instagram siap jalan semua saya urus.</p>
+                    <div class="product-tags">
+                        <span>Landing Page</span>
+                        <span>QRIS</span>
+                        <span>Google Maps</span>
+                        <span>Instagram</span>
+                    </div>
+                    <a href="product-umkm.html" class="product-btn">Lihat Detail →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (inline — no fetch needed, works on file://) -->
     <footer id="contact">
-        <div class="footer-content gs-reveal">
+        <div class="footer-content">
             <h2>Get In Touch</h2>
-            <p style="margin-bottom: 20px;">Tertarik untuk berkolaborasi atau berdiskusi? Jangan ragu untuk menghubungi
-                saya.</p>
+            <p style="margin-bottom: 28px; opacity: 0.7;">Tertarik untuk berkolaborasi atau berdiskusi? Jangan ragu untuk menghubungi saya.</p>
             <div class="social-links">
-                <a href="mailto:farrelvittoriokuki300408@gmail.com">Email</a>
-                <a href="https://github.com/2manimdl" target="_blank" rel="noopener noreferrer">GitHub</a>
-                <a href="https://www.instagram.com/dlq33_2man?igsh=MWpqem1uYnczZzRmdQ==" target="_blank"
-                    rel="noopener noreferrer">Instagram</a>
+                <a href="mailto:farrelvittoriokuki300408@gmail.com" class="social-link-item">
+                    <div class="social-icon-box">
+                        <img src="assets/email.png" alt="Email" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'icon-fallback\'>✉️</span>'">
+                    </div>
+                    <span>Email</span>
+                </a>
+                <a href="https://www.instagram.com/dlq33_2man?igsh=MWpqem1uYnczZzRmdQ==" target="_blank" rel="noopener noreferrer" class="social-link-item">
+                    <div class="social-icon-box">
+                        <img src="assets/instagram.png" alt="Instagram" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'icon-fallback\'>📸</span>'">
+                    </div>
+                    <span>Instagram</span>
+                </a>
+                <a href="https://wa.me/628561846499?text=Halo%20Farrel%2C%20saya%20ingin%20terhubung%20dengan%20kamu!" target="_blank" rel="noopener noreferrer" class="social-link-item">
+                    <div class="social-icon-box">
+                        <img src="assets/whatsapp.png" alt="WhatsApp" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'icon-fallback\'>💬</span>'">
+                    </div>
+                    <span>WhatsApp</span>
+                </a>
             </div>
             <p class="copyright">&copy; 2026 Farrel Vittorio Kuki. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- ═══ GSAP CDN ═══ -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
-    <!-- ═══ Main Script ═══ -->
     <script src="script.js"></script>
-
 </body>
-
 </html>

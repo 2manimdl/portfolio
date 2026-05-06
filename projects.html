@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Projects — Farrel Vittorio Kuki</title>
+    <meta name="description" content="Semua project Farrel Vittorio Kuki.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .all-projects-page {
+            padding-top: 120px;
+            min-height: 100vh;
+        }
+        .all-projects-header {
+            padding: 0 10% var(--space-lg);
+        }
+        .all-projects-header .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--text-color);
+            opacity: 0.5;
+            margin-bottom: var(--space-md);
+            transition: var(--transition);
+        }
+        .all-projects-header .back-link:hover { opacity: 1; }
+        .all-projects-header h2 {
+            opacity: 1;
+            visibility: visible;
+        }
+        .all-projects-grid {
+            padding: 0 10% var(--space-xl);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        @media (max-width: 992px) {
+            .all-projects-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .all-projects-grid { grid-template-columns: 1fr; padding: 0 6% var(--space-xl); }
+            .all-projects-header { padding: 0 6% var(--space-lg); }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="grid-bg" aria-hidden="true"></div>
+
+    <nav id="navbar">
+        <a href="index.html" class="logo" style="text-decoration:none;">FVK.</a>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html#home" class="nav-item">Home</a></li>
+            <li><a href="index.html#about" class="nav-item">About</a></li>
+            <li><a href="index.html#skills" class="nav-item">Skills</a></li>
+            <li><a href="index.html#journey" class="nav-item">Journey</a></li>
+            <li><a href="index.html#projects" class="nav-item">Projects</a></li>
+            <li><a href="index.html#courses" class="nav-item">Courses</a></li>
+            <li><a href="index.html#products" class="nav-item">Products</a></li>
+        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <main class="all-projects-page">
+        <div class="all-projects-header">
+            <a href="index.html#projects" class="back-link">← Kembali</a>
+            <h2>All Projects</h2>
+            <p style="opacity:0.6; max-width:560px; line-height:1.8;">Semua yang pernah saya bangun — dari eksperimen iseng tengah malam sampai project yang beneran dipakai orang.</p>
+        </div>
+
+        <div class="all-projects-grid">
+            <!-- PROJECT 1 -->
+            <div class="project-card featured">
+                <div class="project-preview">
+                    <img src="assets/project1.png" alt="Project Terbaru" class="project-thumb"
+                        onerror="this.style.display='none'; this.parentElement.style.background='#e8e8e8'">
+                    <div class="project-overlay">
+                        <a href="https://yourwebsite.com" target="_blank" rel="noopener noreferrer" class="preview-btn">Buka Website →</a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="project-tag">Terbaru</span>
+                    <h3>Nama Project Anda</h3>
+                    <p>Deskripsi singkat project — teknologi yang dipakai dan tujuannya.</p>
+                    <div class="project-stack">
+                        <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PLACEHOLDER 2 -->
+            <div class="project-card placeholder-card">
+                <div class="project-preview placeholder-preview">
+                    <span class="placeholder-icon">⌛</span>
+                    <p>Coming Soon</p>
+                </div>
+                <div class="project-info">
+                    <span class="project-tag muted">Segera</span>
+                    <h3>Project #2</h3>
+                    <p>Masih dalam pengerjaan.</p>
+                </div>
+            </div>
+
+            <!-- PLACEHOLDER 3 -->
+            <div class="project-card placeholder-card">
+                <div class="project-preview placeholder-preview">
+                    <span class="placeholder-icon">⌛</span>
+                    <p>Coming Soon</p>
+                </div>
+                <div class="project-info">
+                    <span class="project-tag muted">Segera</span>
+                    <h3>Project #3</h3>
+                    <p>Masih dalam pengerjaan.</p>
+                </div>
+            </div>
+
+            <!-- PLACEHOLDER 4 -->
+            <div class="project-card placeholder-card">
+                <div class="project-preview placeholder-preview">
+                    <span class="placeholder-icon">⌛</span>
+                    <p>Coming Soon</p>
+                </div>
+                <div class="project-info">
+                    <span class="project-tag muted">Segera</span>
+                    <h3>Project #4</h3>
+                    <p>Masih dalam pengerjaan.</p>
+                </div>
+            </div>
+
+            <!-- PLACEHOLDER 5 -->
+            <div class="project-card placeholder-card">
+                <div class="project-preview placeholder-preview">
+                    <span class="placeholder-icon">⌛</span>
+                    <p>Coming Soon</p>
+                </div>
+                <div class="project-info">
+                    <span class="project-tag muted">Segera</span>
+                    <h3>Project #5</h3>
+                    <p>Masih dalam pengerjaan.</p>
+                </div>
+            </div>
+
+            <!-- PLACEHOLDER 6 -->
+            <div class="project-card placeholder-card">
+                <div class="project-preview placeholder-preview">
+                    <span class="placeholder-icon">⌛</span>
+                    <p>Coming Soon</p>
+                </div>
+                <div class="project-info">
+                    <span class="project-tag muted">Segera</span>
+                    <h3>Project #6</h3>
+                    <p>Masih dalam pengerjaan.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER inline -->
+    <footer id="contact">
+        <div class="footer-content">
+            <h2>Get In Touch</h2>
+            <p style="margin-bottom: 28px; opacity: 0.7;">Tertarik untuk berkolaborasi atau berdiskusi? Jangan ragu untuk menghubungi saya.</p>
+            <div class="social-links">
+                <a href="mailto:farrelvittoriokuki300408@gmail.com" class="social-link-item">
+                    <div class="social-icon-box">
+                        <span class="icon-fallback">✉️</span>
+                    </div>
+                    <span>Email</span>
+                </a>
+                <a href="https://www.instagram.com/dlq33_2man?igsh=MWpqem1uYnczZzRmdQ==" target="_blank" rel="noopener noreferrer" class="social-link-item">
+                    <div class="social-icon-box">
+                        <img src="assets/instagram.png" alt="Instagram" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'icon-fallback\'>📸</span>'">
+                    </div>
+                    <span>Instagram</span>
+                </a>
+                <a href="https://wa.me/628561846499?text=Halo%20Farrel%2C%20saya%20ingin%20terhubung%20dengan%20kamu!" target="_blank" rel="noopener noreferrer" class="social-link-item">
+                    <div class="social-icon-box">
+                        <img src="assets/whatsapp.png" alt="WhatsApp" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'icon-fallback\'>💬</span>'">
+                    </div>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+            <p class="copyright">&copy; 2026 Farrel Vittorio Kuki. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

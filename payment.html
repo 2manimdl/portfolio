@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembayaran — Farrel Vittorio Kuki</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .payment-page {
+            padding-top: 120px;
+            min-height: 100vh;
+            padding-bottom: var(--space-xl);
+        }
+        .payment-container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 6%;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--text-color);
+            opacity: 0.5;
+            margin-bottom: var(--space-md);
+            transition: var(--transition);
+        }
+        .back-link:hover { opacity: 1; }
+        .payment-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            letter-spacing: -1px;
+        }
+        .payment-product-name {
+            font-size: 1rem;
+            opacity: 0.6;
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-lg);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .payment-product-name span {
+            font-weight: 700;
+            opacity: 1;
+            color: var(--text-color);
+        }
+        .payment-methods {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: var(--space-lg);
+        }
+        @media (max-width: 540px) {
+            .payment-methods { grid-template-columns: 1fr; }
+        }
+        .method-card {
+            border: 2px solid var(--border-color);
+            padding: 32px 24px;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            background: var(--bg-color);
+        }
+        .method-card:hover, .method-card.active {
+            border-color: var(--text-color);
+            background: var(--text-color);
+            color: var(--bg-color);
+        }
+        .method-card .method-emoji {
+            font-size: 2.4rem;
+            display: block;
+            margin-bottom: 14px;
+        }
+        .method-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .method-card p {
+            font-size: 0.82rem;
+            opacity: 0.6;
+            line-height: 1.6;
+        }
+        .method-card.active p { opacity: 0.7; }
+        .method-detail {
+            display: none;
+            border: 1px solid var(--border-color);
+            padding: var(--space-md);
+            margin-bottom: var(--space-md);
+            background: #fafafa;
+        }
+        .method-detail.show { display: block; }
+        .qris-box { text-align: center; padding: var(--space-md) 0; }
+        .qris-placeholder {
+            width: 240px;
+            height: 240px;
+            border: 2px solid var(--border-color);
+            margin: 0 auto var(--space-sm);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            padding: 8px;
+        }
+        .qris-placeholder img { width: 100%; height: 100%; object-fit: contain; }
+        .bank-logo { width: 120px; margin-bottom: var(--space-sm); }
+        .qris-box > p {
+            font-size: 0.85rem;
+            opacity: 0.6;
+            margin-bottom: var(--space-md);
+        }
+        .qris-wa-btn, .transfer-wa-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        .qris-wa-btn:hover, .transfer-wa-btn:hover { opacity: 0.88; }
+        .transfer-box h4 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.5;
+            margin-bottom: var(--space-sm);
+        }
+        .transfer-box p {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            line-height: 1.7;
+            margin-bottom: var(--space-md);
+        }
+        .payment-note {
+            font-size: 0.8rem;
+            opacity: 0.45;
+            line-height: 1.7;
+            border-top: 1px solid var(--border-color);
+            padding-top: var(--space-sm);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="grid-bg" aria-hidden="true"></div>
+
+    <nav id="navbar">
+        <a href="index.html" class="logo" style="text-decoration:none;">FVK.</a>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html#home" class="nav-item">Home</a></li>
+            <li><a href="index.html#products" class="nav-item">Products</a></li>
+            <li><a href="index.html#courses" class="nav-item">Courses</a></li>
+        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <main class="payment-page">
+        <div class="payment-container">
+            <a href="index.html#products" class="back-link">← Kembali ke Products</a>
+            <h1 class="payment-title">Pembayaran</h1>
+            <p class="payment-product-name">Produk: <span id="product-display">—</span></p>
+
+            <p style="font-size:0.9rem; opacity:0.7; margin-bottom: var(--space-md);">Pilih metode pembayaran yang kamu inginkan:</p>
+
+            <div class="payment-methods">
+                <div class="method-card" onclick="selectMethod('qris', this)">
+                    <span class="method-emoji">📱</span>
+                    <h3>QRIS</h3>
+                    <p>Scan QR, bayar langsung dari app apapun. Kirim bukti ke WhatsApp.</p>
+                </div>
+                <div class="method-card" onclick="selectMethod('transfer', this)">
+                    <span class="method-emoji">🏦</span>
+                    <h3>Transfer Bank</h3>
+                    <p>Transfer ke rekening, lalu konfirmasi via WhatsApp.</p>
+                </div>
+            </div>
+
+            <!-- QRIS Detail -->
+            <div class="method-detail" id="detail-qris">
+                <div class="qris-box">
+                    <div class="qris-placeholder">
+                        <img src="assets/qris.jpeg" alt="QRIS"
+                            onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:3rem\'>📱</span><p style=\'font-size:0.8rem;opacity:0.5\'>QRIS tidak tersedia</p>'">
+                    </div>
+                    <p>Scan QR di atas, bayar, lalu kirim bukti pembayaran ke WhatsApp.</p>
+                    <a id="qris-wa-link" href="#" target="_blank" rel="noopener noreferrer" class="qris-wa-btn">
+                        💬 Kirim Bukti ke WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Transfer Detail -->
+            <div class="method-detail" id="detail-transfer">
+                <div class="transfer-box">
+                    <h4>Rekening Transfer</h4>
+                    <img src="assets/seabank.png" alt="SeaBank" class="bank-logo"
+                        onerror="this.style.display='none'">
+                    <p>
+                        No. Rekening: <strong>9016 5209 3559</strong><br>
+                        Atas Nama: <strong>Farrel Vittorio Kuki</strong>
+                    </p>
+                    <p>Setelah transfer, hubungi WhatsApp untuk konfirmasi pembayaran dan pengiriman produk.</p>
+                    <a id="transfer-wa-link" href="#" target="_blank" rel="noopener noreferrer" class="transfer-wa-btn">
+                        💬 Konfirmasi via WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <p class="payment-note">
+                ⓘ Produk digital akan dikirimkan setelah pembayaran dikonfirmasi. Proses konfirmasi maksimal 1x24 jam.
+                Jika ada kendala, langsung hubungi WhatsApp.
+            </p>
+        </div>
+    </main>
+
+    <!-- FOOTER inline -->
+    <footer id="contact">
+        <div class="footer-content">
+            <h2>Get In Touch</h2>
+            <p style="margin-bottom: 28px; opacity: 0.7;">Tertarik untuk berkolaborasi atau berdiskusi? Jangan ragu untuk menghubungi saya.</p>
+            <div class="social-links">
+                <a href="mailto:farrelvittoriokuki300408@gmail.com" class="social-link-item">
+                    <div class="social-icon-box">
+                        <span class="icon-fallback">✉️</span>
+                    </div>
+                    <span>Email</span>
+                </a>
+                <a href="https://www.instagram.com/dlq33_2man?igsh=MWpqem1uYnczZzRmdQ==" target="_blank" rel="noopener noreferrer" class="social-link-item">
+                    <div class="social-icon-box">
+                        <img src="assets/instagram.png" alt="Instagram" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'icon-fallback\'>📸</span>'">
+                    </div>
+                    <span>Instagram</span>
+                </a>
+                <a href="https://wa.me/628561846499?text=Halo%20Farrel%2C%20saya%20ingin%20terhubung%20dengan%20kamu!" target="_blank" rel="noopener noreferrer" class="social-link-item">
+                    <div class="social-icon-box">
+                        <img src="assets/whatsapp.png" alt="WhatsApp" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'icon-fallback\'>💬</span>'">
+                    </div>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+            <p class="copyright">&copy; 2026 Farrel Vittorio Kuki. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const productKey = params.get('product') || '';
+        const productNames = {
+            'prompt-kit': 'Website Builder Prompt Kit',
+            'canva-pack': 'Edu Pack: Bahan Ajar Anak',
+        };
+        const productDisplay = productNames[productKey] || 'Produk Digital';
+        document.getElementById('product-display').textContent = productDisplay;
+
+        const waMessages = {
+            'prompt-kit': 'Halo%20Farrel%2C%20saya%20sudah%20bayar%20untuk%20Website%20Builder%20Prompt%20Kit.%20Ini%20bukti%20transfernya.',
+            'canva-pack': 'Halo%20Farrel%2C%20saya%20sudah%20bayar%20untuk%20Edu%20Pack%20Canva%20Bahan%20Ajar%20Anak.%20Ini%20bukti%20transfernya.',
+        };
+        const waMsg = waMessages[productKey] || 'Halo%20Farrel%2C%20saya%20mau%20konfirmasi%20pembayaran%20produk.';
+        const waBase = 'https://wa.me/628561846499?text=';
+
+        document.getElementById('qris-wa-link').href = waBase + waMsg;
+        document.getElementById('transfer-wa-link').href = waBase + waMsg;
+
+        function selectMethod(method, el) {
+            document.querySelectorAll('.method-card').forEach(c => c.classList.remove('active'));
+            el.classList.add('active');
+            document.querySelectorAll('.method-detail').forEach(d => d.classList.remove('show'));
+            document.getElementById('detail-' + method).classList.add('show');
+        }
+    </script>
+</body>
+</html>
